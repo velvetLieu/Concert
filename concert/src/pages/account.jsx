@@ -16,7 +16,6 @@ import TaskBar from "./../components/taskbar";
 import Modal from 'react-bootstrap/Modal'
 
 
-/// TODO: Optimize CSS
 /// TODO: Spilt into components
 
 /// Pop-up for account deletion
@@ -40,7 +39,7 @@ function DeleteAccountModal(props) {
       </Modal.Body>
       <Modal.Footer>
         <Button variant="link" onClick={props.onHide}>Cancel</Button>
-        <Button variant="danger" onClick={props.onHide}>Delete Account</Button>
+        <Button className="btn btn-danger" onClick={props.onHide}>Delete Account</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -76,13 +75,13 @@ function ChangePasswordModal(props) {
             <Form.Control type="password" placeholder="Confirm New Password"/>
           </Form.Group>
           <Form.Group controlId="errorMessage">
-            <Form.Text style={{ color: "red" }}>* Error Message</Form.Text>
+            <Form.Text className="text-danger">* Error Message</Form.Text>
           </Form.Group>
         </Form>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="link" onClick={props.onHide}>Cancel</Button>
-        <Button variant="primary" onClick={props.onSubmit}>Submit</Button>
+        <Button className="btn btn-primary" onClick={props.onSubmit}>Submit</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -98,8 +97,6 @@ function PasswordSuccess(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="pws-contained-modal-title-vcenter">
-        </Modal.Title>
       </Modal.Header>
       <Modal.Body className="center">
         {/* Image */}
@@ -109,7 +106,7 @@ function PasswordSuccess(props) {
         Password was Successfully Changed!
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="primary" onClick={props.onHide}>Close</Button>
+        <Button className="btn btn-primary" onClick={props.onHide}>Close</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -121,17 +118,17 @@ function UserAccount () {
   // Hooks
   const [modalShow1, setModalShow1] = React.useState(false); // Change PW Modal
   const [modalShow2, setModalShow2] = React.useState(false); // Delete Account Modal
-  const [modalShow3, setModalShow3] = React.useState(false); // Delete Account Modal
+  const [modalShow3, setModalShow3] = React.useState(false); // Password Change Success Modal
 
   const [show, setShow] = useState(false); // States of active modal
 
   const handleClose1 = () => setShow(false); // Change PW Modal
   const handleClose2 = () => setShow(false); // Delete Account Modal
-  const handleClose3 = () => setShow(false); // Delete Account Modal
+  const handleClose3 = () => setShow(false); // Password Change Success Modal
 
   const handleShow1 = () => setShow(true); // Change PW Modal
   const handleShow2 = () => setShow(true); // Delete Account Modal
-  const handleShow3 = () => setShow(true); // Delete Account Modal
+  const handleShow3 = () => setShow(true); // Password Change Success Modal
 
   return (
     <>
@@ -139,10 +136,10 @@ function UserAccount () {
       <div className="chat-container">
       <TaskBar />
       <div className="background">
-        <Row className="background-2" style={{ margin: "0px" }}>
+        <Row className="background-2">
           <Col>
             {/* Title */}
-            <h2>User Account</h2>
+            <h2 className="title">User Account</h2>
             <Form>
               {/* Form */}
               {/* FNAME */}
@@ -181,7 +178,7 @@ function UserAccount () {
 
                   <div>
                     {/* CHANGE PW */}
-                    <Button variant="primary" style={{margin: "1em 0em"}} onClick={(handleShow1) => setModalShow1(true)}>
+                    <Button className="btn btn-primary format" onClick={(handleShow1) => setModalShow1(true)}>
                       Change Password
                     </Button>
                     <ChangePasswordModal show={modalShow1} onHide={() => setModalShow1(false)} onSubmit={(handleShow3) => {setModalShow3(true); setModalShow1(false)}}/>
@@ -190,7 +187,7 @@ function UserAccount () {
 
                   <div>
                     {/* DELETE ACCOUNT */}
-                    <Button variant="danger" style={{margin: "1em 0em"}} onClick={(handleShow2) => setModalShow2(true)}>
+                    <Button className="btn btn-danger format" onClick={(handleShow2) => setModalShow2(true)}>
                       Delete Account
                     </Button>
                     <DeleteAccountModal show={modalShow2} onHide={() => setModalShow2(false)}/>

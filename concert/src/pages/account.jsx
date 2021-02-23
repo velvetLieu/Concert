@@ -2,8 +2,7 @@
 import { ReactComponent as Star } from "./../images/star.svg";
 import { ReactComponent as Check } from "./../images/check-mark.svg";
 
-// CSS imports
-import "./../styles/root.css";
+// CSS import
 import "./../styles/account.css";
 
 // Component imports
@@ -19,7 +18,6 @@ import Modal from 'react-bootstrap/Modal'
 
 /// TODO: Optimize CSS
 /// TODO: Spilt into components
-/// TODO: Conditionally render components (buttons) for edit info
 
 /// Pop-up for account deletion
 function DeleteAccountModal(props) {
@@ -84,16 +82,14 @@ function ChangePasswordModal(props) {
       </Modal.Body>
       <Modal.Footer>
         <Button variant="link" onClick={props.onHide}>Cancel</Button>
-        <Button variant="primary" onClick={props.onHide}>Submit</Button>
+        <Button variant="primary" onClick={props.onSubmit}>Submit</Button>
       </Modal.Footer>
     </Modal>
   );
 }
 
 /// Pop-up success message for successful password change
-/// TODO: Change CSS for PW Success Modal
-/// TODO: Hook up to password modal or set to pop-up on submit success
-function passwordSuccess(props) {
+function PasswordSuccess(props) {
   return (
     <Modal
       {...props}
@@ -105,9 +101,11 @@ function passwordSuccess(props) {
         <Modal.Title id="pws-contained-modal-title-vcenter">
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body className="center">
         {/* Image */}
         <Check className="check-svg" />
+        <br/>
+        <br/>
         Password was Successfully Changed!
       </Modal.Body>
       <Modal.Footer>
@@ -121,20 +119,19 @@ function passwordSuccess(props) {
 function UserAccount () {
 
   // Hooks
-  const [readState, setReadState] = React.useState("readOnly"); // Read only toggle
-  const [initialBtnState, setInitialBtnState] = React.useState(true); // Initial Button group
-  const [editBtnState, seteditBtnState] = React.useState(false); // Edit Info button group
-
   const [modalShow1, setModalShow1] = React.useState(false); // Change PW Modal
   const [modalShow2, setModalShow2] = React.useState(false); // Delete Account Modal
+  const [modalShow3, setModalShow3] = React.useState(false); // Delete Account Modal
 
   const [show, setShow] = useState(false); // States of active modal
 
   const handleClose1 = () => setShow(false); // Change PW Modal
   const handleClose2 = () => setShow(false); // Delete Account Modal
+  const handleClose3 = () => setShow(false); // Delete Account Modal
 
   const handleShow1 = () => setShow(true); // Change PW Modal
   const handleShow2 = () => setShow(true); // Delete Account Modal
+  const handleShow3 = () => setShow(true); // Delete Account Modal
 
   return (
     <>
@@ -152,26 +149,26 @@ function UserAccount () {
               <Form.Row>
                 <Form.Group as={Col} controlId="formGridFname">
                   <Form.Label>First Name</Form.Label>
-                  <Form.Control type="text" placeholder="FNAME" readOnly={readState}/>
+                  <Form.Control type="text" placeholder="FNAME" readOnly/>
                 </Form.Group>
 
                 {/* LNAME */}
                 <Form.Group as={Col} controlId="formGridLname">
                   <Form.Label>Last Name</Form.Label>
-                  <Form.Control type="text" placeholder="LNAME" readOnly={readState}/>
+                  <Form.Control type="text" placeholder="LNAME" readOnly/>
                 </Form.Group>
               </Form.Row>
 
               {/* EMAIL */}
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" readOnly={readState}/>
+                <Form.Control type="email" placeholder="Enter email" readOnly/>
               </Form.Group>
 
-              {/* PASSWORD */}
-              <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" readOnly/>
+              {/* USERNAME */}
+              <Form.Group controlId="formBasicUsername">
+                <Form.Label>Username</Form.Label>
+                <Form.Control type="text" placeholder="Username" readOnly/>
               </Form.Group>
 
               <Row>
@@ -183,32 +180,12 @@ function UserAccount () {
                   >
 
                   <div>
-                    {/* Submit Changes */}
-                    <Button variant="primary" style={{margin: "1em 0em"}}>
-                      Submit Changes
-                    </Button>
-                  </div>
-
-                  <div>
-                    {/* Submit Changes */}
-                    <Button variant="outline-primary" style={{margin: "1em 0em"}}>
-                      Cancel
-                    </Button>
-                  </div>
-
-                  <div>
-                    {/* EDIT INFO */}
-                      <Button variant="primary" style={{margin: "1em 0em"}} onClick={() => readState == "readOnly" ? setReadState("") : setReadState("readOnly")}>
-                        Edit Information
-                      </Button>
-                  </div>
-
-                  <div>
                     {/* CHANGE PW */}
                     <Button variant="primary" style={{margin: "1em 0em"}} onClick={(handleShow1) => setModalShow1(true)}>
                       Change Password
                     </Button>
-                    <ChangePasswordModal show={modalShow1} onHide={() => setModalShow1(false)}/>
+                    <ChangePasswordModal show={modalShow1} onHide={() => setModalShow1(false)} onSubmit={(handleShow3) => {setModalShow3(true); setModalShow1(false)}}/>
+                    <PasswordSuccess show={modalShow3} onHide={() => setModalShow3(false)}/>
                   </div>
 
                   <div>

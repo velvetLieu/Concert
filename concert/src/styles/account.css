@@ -6,8 +6,12 @@
 
 /* Check Mark Image */
 .check-svg{
-  height: 60%;
-  width: 60%;
+  height: 20%;
+  width: 20%;
+}
+
+.center {
+  text-align: center;
 }
 
 .img-container {

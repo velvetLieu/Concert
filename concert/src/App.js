@@ -1,6 +1,7 @@
 /*App.js*/
 import React from "react";
 import "./App.css";
+import "./styles/root.css";
 
 //Import all needed Component for this tutorial
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";

@@ -1,5 +1,4 @@
 import "./../styles/group-dash.css";
-import "./../styles/root.css";
 import "./../styles/sidebar.css";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";

@@ -4,17 +4,19 @@ import TaskBar from './../components/taskbar';
 import FAQMain from './../components/faqmain';
 import ReactDOM from "react-dom";
 import "./../styles/root.css";
+import "./../styles/faq-style.css"
+import HomeButton from '../components/home-button';
 
 function FAQPage () {
     return (
-        <div className="App">
+        <div className="Faq">
           <FAQ> 
             <FAQ.QAItem>
               <FAQ.Question answerId="q1">
-                {(isOpen, onToggle) => {
+                {(isOpen, _onToggle) => {
                   return (
                     <>
-                      {isOpen ? "Open " : "Close "}
+                      {isOpen ? "(Close) " : "(Open) "}
                       <span>How do I create tutor sessions?</span>
                     </>
                   );
@@ -24,10 +26,10 @@ function FAQPage () {
             </FAQ.QAItem>
             <FAQ.QAItem>
               <FAQ.Question answerId="q2">
-                {(isOpen, onToggle) => {
+                {(isOpen, _onToggle) => {
                   return (
                     <>
-                      {isOpen ? "Open " : "Close "}
+                      {isOpen ? "(Close) " : "(Open) "}
                       <span>How do I create groups?</span>
                     </>
                   );
@@ -37,10 +39,10 @@ function FAQPage () {
             </FAQ.QAItem>
             <FAQ.QAItem>
               <FAQ.Question answerId="q3">
-                {(isOpen, onToggle) => {
+                {(isOpen, _onToggle) => {
                   return (
                     <>
-                      {isOpen ? "Open " : "Close "}
+                      {isOpen ? "(Close) " : "(Open) "}
                       <span>How do I delete groups?</span>
                     </>
                   );
@@ -50,10 +52,10 @@ function FAQPage () {
             </FAQ.QAItem>
             <FAQ.QAItem>
               <FAQ.Question answerId="q4">
-                {(isOpen, onToggle) => {
+                {(isOpen, _onToggle) => {
                   return (
                     <>
-                      {isOpen ? "Open " : "Close "}
+                      {isOpen ? "(Close) " : "(Open) "}
                       <span>Where can I find my meetings?</span>
                     </>
                   );
@@ -63,10 +65,10 @@ function FAQPage () {
             </FAQ.QAItem>
             <FAQ.QAItem>
               <FAQ.Question answerId="q5">
-                {(isOpen, onToggle) => {
+                {(isOpen, _onToggle) => {
                   return (
                     <>
-                      {isOpen ? "Open " : "Close "}
+                      {isOpen ? "(Close) " : "(Open) "}
                       <span>Where can I find my upcoming events?</span>
                     </>
                   );
@@ -76,6 +78,9 @@ function FAQPage () {
 calendar with all of the upcoming events a student may have</FAQ.Answer>
             </FAQ.QAItem>
           </FAQ>
+          <prevPage>
+            <a href = "javascript:history.back()">Back to previous page</a>
+          </prevPage>
         </div>
       );
 }

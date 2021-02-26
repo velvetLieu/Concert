@@ -11,6 +11,7 @@ function FAQ({
 	const isControlled = () => (openFromProps ? true : false);
 	const [open, setIsOpen] = useState(defaultOpen);
 	const getOpen = () => (isControlled() ? openFromProps : open);
+
 	const isOpen = index => {
 	  return getOpen().includes(index) ? true : false;
 	};
@@ -37,6 +38,15 @@ function FAQ({
 		})}
 	  </dl>
 	);
+  }
+
+  function prevPage(){
+	  return(
+		  <button>
+			className="FAQ__return"
+		  </button>
+		
+	  ); 
   }
 
   function Question({ children, isOpen, answerId, onToggle }) {
@@ -76,6 +86,7 @@ function FAQ({
 	});
   }
   
+  FAQ.prevPage = prevPage;
   FAQ.QAItem = QAItem;
   FAQ.Question = Question;
   FAQ.Answer = Answer;

@@ -8,17 +8,17 @@ function FAQMain () {
     {
       question: 'How can I create a tutoring session?',
       answer: 'First go to the student page, then click on create tutoring schedule, from here input the necessary information and submit.',
-      open: false
+      open: true
     },
     {
       question: 'How can I create my groups?',
       answer: 'Go to the student page, click on create groups, input required information and submit',
-      open: false
+      open: true
     },
     {
       question: 'How do I delete my groups?',
       answer: 'Go to student page, right click on the group, delete',
-      open: false
+      open: true
     },
     {
         question: 'Where can I find my meetings?',
@@ -28,7 +28,7 @@ function FAQMain () {
       {
         question: 'Where can I find my upcoming events?',
         answer: 'Integrated at the bottom right of the student homepage, there is a calendar with all of the upcoming events a student may have.',
-        open: false
+        open: true
       }
   ]);
 

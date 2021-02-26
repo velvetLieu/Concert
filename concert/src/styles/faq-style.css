@@ -1,4 +1,16 @@
+.Faq{
+	width: auto;
+	text-align: center;
+	align-self: center;
+	background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
 .FAQ__question {
+	color: white;
 	background: none;
 	border: none;
 	width: 100%;
@@ -13,5 +25,9 @@
   
   .FAQ__answer--hidden {
 	display: none;
+  }
+
+  .FAQ__return{
+	  align-self: flex-start;
   }
   

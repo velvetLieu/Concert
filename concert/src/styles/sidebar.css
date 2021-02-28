@@ -42,6 +42,30 @@
   background: #0770a3;
 }
 
+/* Chatroom sidebar internal box */
+.res-chat-sidebar {
+        display: none;
+        background: #394B58;
+        color: #FFFFFF;
+        padding: 2em;
+        height: 96.4vh;
+}
+
+/* Invite Button */
+.res-chat-sidebar .btn {
+        text-decoration: none;
+        color: #ffffff;
+        background: #75a8cb;
+        padding: 0.5em 2em;
+        border: none;
+}
+
+/* Invite Button selected and hover styling */
+.res-chat-sidebar .btn:hover, .btn:selected {
+  color: #EAF0FC;
+  background: #0770a3;
+}
+
 /* Invite Button position */
 .invite-button-position {
     text-align: center;
@@ -49,6 +73,15 @@
 
 /* '+' Button styleing in sidebar */
 .chat-sidebar .sidebar-component .btn {
+        cursor: pointer;
+        padding: 0em;
+        margin: 0em;
+        background: none;
+
+}
+
+/* '+' Button styleing in sidebar */
+.res-chat-sidebar .sidebar-component .btn {
         cursor: pointer;
         padding: 0em;
         margin: 0em;
@@ -68,5 +101,11 @@
         /* Hide sidebar */
         .chat-sidebar {
                 display: none;
-        } /* end .chat-sidebar */
-} /* end media */
+        }
+
+        /* Chatroom sidebar internal box */
+        .res-chat-sidebar {
+                display: grid;
+                grid-template-rows: 1fr 2fr 2fr 2fr;
+        }
+}

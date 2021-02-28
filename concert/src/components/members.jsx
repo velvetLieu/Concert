@@ -5,8 +5,9 @@ import InviteMember from "./invite-members"
 function Members () {
   return (
     <>
+    <div className="invite-button-position">
       <InviteMember />
-
+</div>
     <div className="dash-section">
 
       {/*<!-- Display User List -->*/}

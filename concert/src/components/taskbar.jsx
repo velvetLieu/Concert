@@ -21,7 +21,6 @@ function TaskBar () {
       </View>
       <View style={{ flex: 1 }}>
         {/*<!-- Create Group Button -->*/}
-        {/* <CreateGroupButton /> */}
         <CreateGroup />
       </View>
     </Container>

@@ -1,6 +1,8 @@
 /// Image imports
 import { ReactComponent as Lotus } from "../images/lotus.svg";
 
+/// CSS imports
+import "./../styles/not-found.css";
 
 function NotFound () {
   return (

@@ -1,0 +1,40 @@
+{
+  "name": "concert",
+  "version": "1.0.0",
+  "description": "Express server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server",
+    "build": "cd concert/build && npm run build",
+    "install-concert": "npm install --prefix concert",
+    "concert": "npm start --prefix concert",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix concert && npm run build --prefix concert"
+  },
+  "engines": {
+    "node": "15.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coffee-Please/Concert.git"
+  },
+  "keywords": [
+    "study",
+    "group-study"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Coffee-Please/Concert/issues"
+  },
+  "homepage": "https://github.com/Coffee-Please/Concert#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.4",
+    "mongoose": "^5.11.15",
+    "nodemon": "^2.0.7",
+    "socket.io": "^3.1.1"
+  }
+}

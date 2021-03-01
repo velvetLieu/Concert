@@ -1,0 +1,28 @@
+/* ./components/taskbar-group-icons.jsx */
+/* Individual group icon in taskbar */
+.group-icon {
+    height: 3.5em;
+    width: 3.5em;
+    margin: 0.5em;
+    border-radius: 50px;
+}
+
+/* ./components/taskbar.jsx */
+/* Taskbar to left of page to hold Home, Create Groups, Group Icons*/
+.taskbar {
+  display: flex;
+  flex-direction: column;
+        height: 100%;
+        align-content: center;
+        background: #394B58;
+        color: #FFFFFF;
+        padding: 1em;
+}
+
+/* Change layout for smaller screens */
+@media only screen and (max-width: 700px) {
+        /* Hide taskbar */
+        .taskbar {
+                display: none;
+        }
+}

@@ -1,0 +1,110 @@
+/* Universal Styling */
+* {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+}
+
+/* Two Column Container */
+.chat-container {
+        display: grid;
+        grid-template-columns: 1fr 20fr;
+        max-width: 100vw;
+        height: 100vh;
+        background: #ffffff;
+}
+
+/* Two Column Container */
+.chat-container-2 {
+        display: grid;
+        grid-template-columns: 1fr 20fr 7fr;
+        max-width: 100vw;
+        height: 100vh;
+        background: #EAF0FC;
+}
+
+/* Body styling */
+body {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 1em;
+        background:  #EAF0FC;
+        width: 100%;
+        height: 100%;
+	     margin: auto;
+}
+
+/* Heading 1 Styling using Google Font */
+h1 {
+	font-family: 'Quicksand', sans-serif;
+	padding: 2em;
+}
+
+/* TODO: Move to forgot-password.css */
+.forgotTitle h1{
+  padding:0;
+}
+
+/* Heading 2 Styling*/
+h2 {
+  font-family: 'Quicksand', sans-serif;
+  color: #707070;
+  padding: 0.5em 0em;
+  font-size: 2em;
+}
+
+h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 100;
+}
+
+p {
+          font-family: 'Quicksand', sans-serif;
+}
+
+/* Remove bullet points from unordered list */
+ul {
+        font-family: 'Quicksand', sans-serif;
+        list-style: none;
+}
+
+/* Note: Does this even work? */
+/* Button Styling */
+.btn {
+        cursor: pointer;
+        padding: 0.5em 1em;
+        background: #75A8CB;
+        color: #ffffff;
+        border: none;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 1em;
+	      border-radius: 5px;
+}
+
+/* Remove input box border*/
+input {
+  border: 0em;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Default Reactstrap Icon Styling */
+svg {
+	width: 2em;
+	height: 1.5em;
+	fill: currentColor;
+}
+
+/* TODO: Move to login.css */
+/* Login Lamp image */
+.login-svg{
+  height: auto;
+  width: auto;
+}
+
+
+/* Change layout for smaller screens */
+@media only screen and (max-width: 700px) {
+  h2 {
+    font-size: 1em;
+  }
+}

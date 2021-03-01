@@ -1,0 +1,46 @@
+.invite-members-text {
+  font-size: 0.5em;
+  font-family: "Quicksand", sans-serif;
+  color: #707070;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+/* header 6 font for subtitle */
+.invite-members-h6 {
+  font-size: 1em;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  color: #707070;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+/* Container for icons of selected members */
+.selected-members-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Whole dialog box */
+.invite-dialog-container {
+  display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 1;
+    align-items: center;
+}
+
+/* Contents of the dialog box */
+.invite-textfield-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Title of the dialog box */
+#invite-form-dialog-title {
+  paddingBottom: 0;
+}

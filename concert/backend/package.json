@@ -4,9 +4,11 @@
   "description": "Express server",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
+    "start": "node server.js",
     "dev": "nodemon server",
-    "heroku-postbuild": "npm run build"
+    "build": "cd ../ && npm run build",
+    "install-client": "cd ../ && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build"
   },
   "engines": {
     "node": "15.x"

@@ -8,6 +8,9 @@
     "dev": "nodemon server",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
   },
+  "engines": {
+    "node": "15.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Coffee-Please/Concert.git"
@@ -28,7 +31,6 @@
     "express": "^4.17.1",
     "mongodb": "^3.6.4",
     "mongoose": "^5.11.15",
-    "node": "^15.8.0",
     "nodemon": "^2.0.7",
     "socket.io": "^3.1.1"
   }

@@ -8,9 +8,6 @@
 # testing
 /coverage
 
-# production
-/build
-
 /backend/node_modules
 # misc
 .DS_Store

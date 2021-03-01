@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server",
     "dev": "nodemon server",
-    "heroku-postbuild": "npm install && npm run start"
+    "heroku-postbuild": "cd ../build && npm install --only=dev && npm install && npm run build"
   },
   "engines": {
     "node": "15.x"

@@ -8,10 +8,9 @@ import ChatSideBar from "./../components/chat-sidebar";
 function TutorDash () {
   return (
     <>
-     <div className="chat-container-2">
+     <div className="chat-container-3">
           <TaskBar/>
           <TutorDashMain/>
-          <ChatSideBar />
      </div>
     </>
   );

@@ -13,8 +13,8 @@ function TutorDashHeader () {
         border-radius: 50px 50px 50px 50px;
         background-color: #509DD2;
         color: white;
-        height: 80px;
-        width: 150%;
+        height: 64px;
+        width: 250px;
         margin-left: 20px;
         margin-right: 20px;
       }

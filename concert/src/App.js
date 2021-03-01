@@ -7,8 +7,8 @@ import "./styles/root.css";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 //Pages
-import MainPage from "./pages/index"; ///< index.jsx will be automatically imported
-import GroupDash from "./pages/group-dash"; ///< index.jsx will be automatically imported
+import MainPage from "./pages/index";
+import GroupDash from "./pages/group-dash";
 import TutorDash from "./pages/tutor-dash";
 import NotFound from "./pages/not-found";
 import UserAccount from "./pages/account";
@@ -36,6 +36,9 @@ const App = () => {
         </Route>
         <Route exact path="/dash">
         <GroupDash />
+        </Route>
+        <Route exact path="/tutor-dash">
+          <TutorDash />
         </Route>
         <Route exact path="/account">
           <UserAccount />

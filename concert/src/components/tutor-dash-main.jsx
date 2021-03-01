@@ -9,12 +9,12 @@ function TutorDashMain () {
   return (
     <>
     {/*<!-- Tutor Dashboard Area -->*/}
-    <Container className="dash-main">
+    <div className="dash-main">
       {/*<!-- Tutor Header -->*/}
       <TutorDashHeader />
       {/*<!-- Card display for classes -->*/}
       <TutorDashCourses />
-    </Container>
+    </div>
     </>
   );
 }

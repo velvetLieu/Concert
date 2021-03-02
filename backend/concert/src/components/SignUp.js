@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
@@ -17,8 +17,17 @@ const collegeNames = [
   "Social & Behavioral Sciences",
   "The Tseng College",
 ];
+//holds state
+
+
+const submit = e => {
+e.preventDefault();
+
+};
+
 
 const SignUp = ({ children }) => {
+  const [value,setValue] = useState("");
   return (
     <>
       <Row>
@@ -26,7 +35,7 @@ const SignUp = ({ children }) => {
           <Chalkboard className="login-svg" />
         </Col>
         <Col>
-          <Form>
+          <Form onSubmit={submit}>
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>First Name</Form.Label>

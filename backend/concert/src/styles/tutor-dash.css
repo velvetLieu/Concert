@@ -1,0 +1,15 @@
+/* Overall dashboard*/
+.dash-main {
+
+}
+
+/* Top of Message Box with Group Name and Course Info */
+.tutor-dash-header {
+        border-bottom: 1px solid #bec6c3;
+        padding: 1em;
+        margin: 1em;
+}
+
+.tutor-dash-courses {
+
+}

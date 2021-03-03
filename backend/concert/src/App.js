@@ -11,8 +11,6 @@ import MainPage from "./pages/index";
 import GroupDash from "./pages/group-dash";
 import TutorDash from "./pages/tutor-dash";
 import NotFound from "./pages/not-found";
-import StudentDash from "./pages/student-dash";
-import FAQPage from "./pages/faq-page";
 import UserAccount from "./pages/account";
 
 //imports modes for the main page to re-render
@@ -39,11 +37,6 @@ const App = () => {
         <Route exact path="/dash">
         <GroupDash />
         </Route>
-        <Route exact path="/student">
-        <StudentDash/>
-        </Route>
-        <Route exact path="/faq" />
-        <FAQPage/>
         <Route exact path="/tutor-dash">
           <TutorDash />
         </Route>

@@ -23,13 +23,6 @@
         background: #EAF0FC;
 }
 
-<<<<<<< HEAD:concert/src/styles/root.css
-
-/* Nav Link Styling On Mouse Hover
-nav a:hover {
-	background-color: #000000;
-} */
-=======
 /* For tutor dash */
 .chat-container-3 {
         display: grid;
@@ -38,7 +31,6 @@ nav a:hover {
         height: 100vh;
         background: #EAF0FC;
 }
->>>>>>> 687626b22bc5dd3aa7e82d7ddfb7bd65fb3d59bb:backend/concert/src/styles/root.css
 
 /* Body styling */
 body {

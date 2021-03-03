@@ -1,12 +1,15 @@
 // REQUIRED SERVER PACKAGES, FILES AND CONST VARS
-const PATH = require('path'); // NodeJS - Handle and transforms filepaths
-const HTTP = require('http'); // NodeJS - Allow transfer of data over HTTP
-const EXPRESS = require('express'); // use express framework
+const PATH = require("path"); // NodeJS - Handle and transforms filepaths
+const HTTP = require("http"); // NodeJS - Allow transfer of data over HTTP
+const EXPRESS = require("express"); // use express framework
 const APP = EXPRESS(); // create an express app
 const SERVER = HTTP.createServer(APP); // create the server to use for socket.io
-const PORT =  process.env.PORT ||3000; // Run server on available port, otherwise localhost fallback
+const PORT = process.env.PORT || 3000; // Run server on available port, otherwise localhost fallback
 const ENV = process.env.NODE_ENV; // Set available port
 
+//parse data from frontend
+APP.use(EXPRESS.json());
+APP.use(EXPRESS.urlencoded());
 
 // APP.use(cors());
 // Database consts
@@ -22,7 +25,7 @@ const ENV = process.env.NODE_ENV; // Set available port
 
 // Otherwose, confirm connection
 //db.once('open', function() {
-  //console.log("We are connected!");
+//console.log("We are connected!");
 //});
 
 // SERVER
@@ -30,15 +33,18 @@ const ENV = process.env.NODE_ENV; // Set available port
 SERVER.listen(PORT);
 
 // Access heroku production environment or localhost
-if (ENV === 'production' || PORT === 3000) {
-    // Set production code folder (concert/build)
-    APP.use(EXPRESS.static(PATH.join(__dirname, 'concert/build')));
+if (ENV === "production" || PORT === 3000) {
+  // Set production code folder (concert/build)
+  APP.use(EXPRESS.static(PATH.join(__dirname, "concert/build")));
 
-    //Send to index.html as default path
-    // TEST: Try to remove to see if needed, used by server if not using api paths
-    APP.get('*', (req, res) => {
-      res.sendFile(PATH.resolve(__dirname, 'concert', 'build', 'index.html'));
-    });
+  //Send to index.html as default path
+  // TEST: Try to remove to see if needed, used by server if not using api paths
+  APP.get("*", (req, res) => {
+    res.sendFile(PATH.resolve(__dirname, "concert", "build", "index.html"));
+  });
 
-    console.log(`Server running on port: ${PORT}`);
+  console.log(`Server running on port: ${PORT}`);
 } // end if
+
+//express routing
+APP.post("/SignUp", (req, res) => res.send(console.log(req.body.email)));

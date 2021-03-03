@@ -5,6 +5,9 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { ReactComponent as Chalkboard } from "../images/createChalkboard.svg";
 
+//import axios
+import axios from "axios";
+
 const collegeNames = [
   "Mike Curb College of Arts, Media, & Communication",
   "David Nazarian College of Business and Economics",
@@ -23,7 +26,8 @@ const SignUp = ({ children }) => {
   const email_addr = useRef();
   const submit = (e) => {
     e.preventDefault();
-    console.log(email_addr.current.value);
+    axios.post("/SignUp", {email: email_addr.current.value})
+    email_addr.current.value ="";
   };
   return (
     <>

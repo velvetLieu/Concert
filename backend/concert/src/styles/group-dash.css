@@ -1,21 +1,3 @@
-/* Login Page */
-.chat-container {
-        display: grid;
-        grid-template-columns: 1fr 20fr;
-        max-width: 100vw;
-        height: 100vh;
-        background: #ffffff;
-}
-
-/* For Group Dash */
-.chat-container-2 {
-        display: grid;
-        grid-template-columns: 1fr 20fr 7fr;
-        max-width: 100vw;
-        height: 100vh;
-        background: #EAF0FC;
-}
-
 /* Top of Message Box with Group Name and Course Info */
 .dash-header {
         border-bottom: 1px solid #bec6c3;

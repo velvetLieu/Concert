@@ -1,0 +1,69 @@
+/* Star Image */
+.star-svg {
+  height: 60%;
+  width: 60%;
+}
+
+/* Check Mark Image */
+.check-svg {
+  height: 20%;
+  width: 20%;
+}
+
+/* Centering of content in password change success modal */
+.center {
+  text-align: center;
+}
+
+/* Centering of star-svg */
+.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* White background with dashed outline */
+.background-2 {
+  background-color: #FFF;
+  padding: 2em;
+  outline: 5px dashed #959595;
+  outline-offset: -15px;
+  font-family: 'Quicksand';
+  border-radius: 5px;
+  margin: 0px;
+}
+
+/* Spacing of buttons */
+.format {
+  margin: 0.5em 0em !important;
+}
+
+/* Blue background */
+.background {
+  background-color: #EAF0FC;
+  padding: 2em;
+}
+
+/* Modal Card and Body Content Styling */
+.modal-content {
+  border: 0 !important;
+  border-radius: 0  !important;
+  outline: 5px dashed grey  !important;
+  outline-offset: -15px;
+  padding: 2em;
+  font-family: 'Quicksand';
+  color: #707070;
+}
+
+/* Title in Modals */
+.modal-header {
+    border-bottom: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* Title for page */
+.title {
+    font-size: 2rem;
+    font-family: 'Quicksand';
+}

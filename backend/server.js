@@ -34,8 +34,7 @@ if (ENV === 'production' || PORT === 3000) {
     // Set production code folder (concert/build)
     APP.use(EXPRESS.static(PATH.join(__dirname, 'concert/build')));
 
-    //Send to index.html as default path
-    // TEST: Try to remove to see if needed, used by server if not using api paths
+    //Send to index.html as default path, sends users to 404 is path is not found
     APP.get('*', (req, res) => {
       res.sendFile(PATH.resolve(__dirname, 'concert', 'build', 'index.html'));
     });

@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useRef } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
@@ -19,15 +19,12 @@ const collegeNames = [
 ];
 //holds state
 
-
-const submit = e => {
-e.preventDefault();
-
-};
-
-
 const SignUp = ({ children }) => {
-  const [value,setValue] = useState("");
+  const email_addr = useRef();
+  const submit = (e) => {
+    e.preventDefault();
+    console.log(email_addr.current.value);
+  };
   return (
     <>
       <Row>
@@ -39,7 +36,7 @@ const SignUp = ({ children }) => {
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>First Name</Form.Label>
-                <Form.Control type="email" placeholder="" />
+                <Form.Control type="text" placeholder="" />
               </Form.Group>
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>Last Name</Form.Label>
@@ -49,7 +46,7 @@ const SignUp = ({ children }) => {
 
             <Form.Group controlId="formGridAddress1">
               <Form.Label>Email Address</Form.Label>
-              <Form.Control placeholder="" />
+              <Form.Control ref={email_addr} type="email" placeholder="" />
             </Form.Group>
             <Form.Group controlId="formGridAddress2">
               <Form.Label>Username</Form.Label>
@@ -85,7 +82,7 @@ const SignUp = ({ children }) => {
               </Col>
             </Form.Row>
             <Row>
-              <Col  xs={{offset:8}}>
+              <Col xs={{ offset: 8 }}>
                 <Button className="ml-2" variant="primary" type="submit">
                   Create Account
                 </Button>

@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import { ReactComponent as Lamp } from "../images/loginLamp.svg";
+import { Link } from "react-router-dom";
 
 const Login = ({ children }) => {
   return (
@@ -33,7 +34,7 @@ const Login = ({ children }) => {
                   aria-label="Toolbar with Button groups"
                 >
                   <Button variant="outline-primary" type="submit">
-                    Sign up
+                  <Link className="mr-2"to="/Sign-up">Sign up</Link>
                   </Button>
                   <Button variant="primary" type="submit">
                     Sign in

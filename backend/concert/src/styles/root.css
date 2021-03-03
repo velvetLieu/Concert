@@ -23,6 +23,15 @@
         background: #EAF0FC;
 }
 
+/* For tutor dash */
+.chat-container-3 {
+        display: grid;
+        grid-template-columns: 1fr 20fr;
+        max-width: 100vw;
+        height: 100vh;
+        background: #EAF0FC;
+}
+
 /* Body styling */
 body {
         font-family: 'Quicksand', sans-serif;

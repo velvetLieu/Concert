@@ -7,9 +7,9 @@ const SERVER = HTTP.createServer(APP); // create the server to use for socket.io
 const PORT = process.env.PORT || 3000; // Run server on available port, otherwise localhost fallback
 const ENV = process.env.NODE_ENV; // Set available port
 
-//parse data from frontend
+//Equivalent to Body-Parser
 APP.use(EXPRESS.json());
-APP.use(EXPRESS.urlencoded());
+APP.use(EXPRESS.urlencoded({ extended: true }));
 
 // APP.use(cors());
 // Database consts

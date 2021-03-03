@@ -18,6 +18,9 @@ const MainPage = ({children}) => {
             <Link className="mr-2"to="/Forgot">Forgot Pass</Link>
             <Link className="mr-2"to="/">Login</Link>
             <Link className="mr-2"to="/account">Account</Link>
+            <Link className="mr-2"to="/faq">FAQPage</Link>
+            <Link className="mr-2"to="/student">Student</Link>
+            
           </>
         }
       />

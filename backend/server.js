@@ -7,6 +7,9 @@ const SERVER = HTTP.createServer(APP); // create the server to use for socket.io
 const PORT = process.env.PORT || 3000; // Run server on available port, otherwise localhost fallback
 const ENV = process.env.NODE_ENV; // Set available port
 
+
+
+
 //Equivalent to Body-Parser
 APP.use(EXPRESS.json());
 APP.use(EXPRESS.urlencoded({ extended: true }));
@@ -23,13 +26,26 @@ mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true});
 
 //holds the connection 
 const db = mongoose.connection;
-//result being tested
-db.on('error', console.error.bind(console, 'connection error:')); // Catch connection error
 
-// Otherwose, confirm connection
-//db.once('open', function() {
-//console.log("We are connected!");
-//});
+//test if db is online and connection has been made
+db.on('error', console.error.bind(console, 'connection error:')); // Catch connection error
+db.once('open', function() {
+console.log("We are connected!");
+});
+// Schemas 
+const userSchema = new mongoose.Schema({
+  id: Number,
+  f_name: String,
+  l_name: String,
+  email: String,
+  password: String,
+  // role_id: Number,
+  // groups: groupsSchema
+
+ });
+ const User = mongoose.model('User',userSchema);
+
+
 
 // SERVER
 // Create the http server running on the available port
@@ -50,4 +66,23 @@ if (ENV === "production" || PORT === 3000) {
 } // end if
 
 //express routing
-APP.post("/SignUp", (req, res) => res.send(console.log(req.body.email)));
+APP.post("/SignUp", (req, res) => {
+  
+
+  // const postObj = {
+  //   email_addr: email,
+  //   college_name: college,
+  //   f_name:f_name,
+  //   l_name:l_name,
+  //   userName:username,
+  //   password: password
+  // }
+
+  // const newUser = new User({
+
+  // })
+  
+  console.log(req.body) ;
+});
+
+

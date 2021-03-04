@@ -23,10 +23,24 @@ const collegeNames = [
 //holds state
 
 const SignUp = ({ children }) => {
+  //each of these fields gets parsed into our server
   const email_addr = useRef();
+  const college_select = useRef();
+  const password_sign_up = useRef();
+  const username = useRef();
+  const f_name = useRef();
+  const l_name = useRef();
+
   const submit = (e) => {
     e.preventDefault();
-    axios.post("/SignUp", {email: email_addr.current.value})
+    axios.post("/SignUp", {
+      email: email_addr.current.value,
+      college: college_select.current.value,
+      f_name:f_name.current.value,
+      l_name:l_name.current.value,
+      username: username.current.value,
+      password: password_sign_up.current.value
+    })
     email_addr.current.value ="";
   };
   return (
@@ -40,11 +54,11 @@ const SignUp = ({ children }) => {
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>First Name</Form.Label>
-                <Form.Control type="text" placeholder="" />
+                <Form.Control ref={f_name} type="text" placeholder="" />
               </Form.Group>
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>Last Name</Form.Label>
-                <Form.Control type="password" placeholder="" />
+                <Form.Control ref= {l_name} type="text" placeholder="" />
               </Form.Group>
             </Form.Row>
 
@@ -52,14 +66,15 @@ const SignUp = ({ children }) => {
               <Form.Label>Email Address</Form.Label>
               <Form.Control ref={email_addr} type="email" placeholder="" />
             </Form.Group>
+
             <Form.Group controlId="formGridAddress2">
               <Form.Label>Username</Form.Label>
-              <Form.Control placeholder="" />
+              <Form.Control ref ={username} placeholder="" />
             </Form.Group>
 
             <Form.Group controlId="formGridAddress2">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="" />
+              <Form.Control ref={password_sign_up} type="password" placeholder="" />
             </Form.Group>
 
             <Form.Row className="align-items-center">
@@ -70,9 +85,10 @@ const SignUp = ({ children }) => {
                   className="mr-sm-2"
                   id="inlineFormCustomSelect"
                   custom
+                  ref = {college_select}
                 >
                   {collegeNames.map((college, i) => (
-                    <option value={i}>{college}</option>
+                    <option key={i} value={college}>{college}</option>
                   ))}
                 </Form.Control>
               </Col>

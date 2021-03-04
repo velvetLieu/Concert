@@ -13,15 +13,18 @@ APP.use(EXPRESS.urlencoded({ extended: true }));
 
 // APP.use(cors());
 // Database consts
-//const mongoose = require('mongoose'); //use mongoose framework
-//const url = "mongodb+srv://root:CSUNconcert491@cluster0.bgl0c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" // Database Creds
+const mongoose = require('mongoose'); //use mongoose framework
+//connection to our database variable holder
+const url = "mongodb+srv://root:CSUNconcert491@cluster0.bgl0c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" // Database Creds
 
 // DATABASE
-//mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true}); // Connect to database
+//connection being made 
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true}); 
 
-//const db = mongoose.connection; // Store connection result
-
-//db.on('error', console.error.bind(console, 'connection error:')); // Catch connection error
+//holds the connection 
+const db = mongoose.connection;
+//result being tested
+db.on('error', console.error.bind(console, 'connection error:')); // Catch connection error
 
 // Otherwose, confirm connection
 //db.once('open', function() {

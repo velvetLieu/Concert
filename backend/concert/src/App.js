@@ -31,7 +31,7 @@ const App = () => {
         <Route exact path="/Forgot">
         <MainPage children={<ForgotPass />} />
         </Route>
-        <Route exact path="/Sign-up">
+        <Route exact path="/sign-up">
         <MainPage children={<SignUp />}/>
         </Route>
         <Route exact path="/dash">

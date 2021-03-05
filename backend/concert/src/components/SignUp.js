@@ -36,12 +36,16 @@ const SignUp = ({ children }) => {
     axios.post("/SignUp", {
       email: email_addr.current.value,
       college: college_select.current.value,
-      f_name:f_name.current.value,
-      l_name:l_name.current.value,
+      f_name: f_name.current.value,
+      l_name: l_name.current.value,
       username: username.current.value,
-      password: password_sign_up.current.value
-    })
-    email_addr.current.value ="";
+      password: password_sign_up.current.value,
+    });
+    email_addr.current.value = "";
+    college_select.current.value = "";
+    f_name.current.value = "";
+    username.current.value = "";
+    password_sign_up.current.value = "";
   };
   return (
     <>
@@ -58,7 +62,7 @@ const SignUp = ({ children }) => {
               </Form.Group>
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>Last Name</Form.Label>
-                <Form.Control ref= {l_name} type="text" placeholder="" />
+                <Form.Control ref={l_name} type="text" placeholder="" />
               </Form.Group>
             </Form.Row>
 
@@ -69,12 +73,16 @@ const SignUp = ({ children }) => {
 
             <Form.Group controlId="formGridAddress2">
               <Form.Label>Username</Form.Label>
-              <Form.Control ref ={username} placeholder="" />
+              <Form.Control ref={username} placeholder="" />
             </Form.Group>
 
             <Form.Group controlId="formGridAddress2">
               <Form.Label>Password</Form.Label>
-              <Form.Control ref={password_sign_up} type="password" placeholder="" />
+              <Form.Control
+                ref={password_sign_up}
+                type="password"
+                placeholder=""
+              />
             </Form.Group>
 
             <Form.Row className="align-items-center">
@@ -85,10 +93,12 @@ const SignUp = ({ children }) => {
                   className="mr-sm-2"
                   id="inlineFormCustomSelect"
                   custom
-                  ref = {college_select}
+                  ref={college_select}
                 >
                   {collegeNames.map((college, i) => (
-                    <option key={i} value={college}>{college}</option>
+                    <option key={i} value={college}>
+                      {college}
+                    </option>
                   ))}
                 </Form.Control>
               </Col>

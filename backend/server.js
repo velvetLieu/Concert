@@ -7,32 +7,30 @@ const SERVER = HTTP.createServer(APP); // create the server to use for socket.io
 const PORT = process.env.PORT || 3000; // Run server on available port, otherwise localhost fallback
 const ENV = process.env.NODE_ENV; // Set available port
 
-
-
-
 //Equivalent to Body-Parser
 APP.use(EXPRESS.json());
 APP.use(EXPRESS.urlencoded({ extended: true }));
 
 // APP.use(cors());
 // Database consts
-const mongoose = require('mongoose'); //use mongoose framework
+const mongoose = require("mongoose"); //use mongoose framework
 //connection to our database variable holder
-const url = "mongodb+srv://root:CSUNconcert491@cluster0.bgl0c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" // Database Creds
+const url =
+  "mongodb+srv://root:CSUNconcert491@cluster0.bgl0c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"; // Database Creds
 
 // DATABASE
-//connection being made 
-mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true}); 
+//connection being made
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
-//holds the connection 
+//holds the connection
 const db = mongoose.connection;
 
 //test if db is online and connection has been made
-db.on('error', console.error.bind(console, 'connection error:')); // Catch connection error
-db.once('open', function() {
-console.log("We are connected!");
+db.on("error", console.error.bind(console, "connection error:")); // Catch connection error
+db.once("open", function () {
+  console.log("We are connected!");
 });
-// Schemas 
+// Schemas
 const userSchema = new mongoose.Schema({
   id: Number,
   f_name: String,
@@ -41,11 +39,8 @@ const userSchema = new mongoose.Schema({
   password: String,
   // role_id: Number,
   // groups: groupsSchema
-
- });
- const User = mongoose.model('User',userSchema);
-
-
+});
+const User = mongoose.model("User", userSchema);
 
 // SERVER
 // Create the http server running on the available port
@@ -66,9 +61,24 @@ if (ENV === "production" || PORT === 3000) {
 } // end if
 
 //express routing
-APP.post("/SignUp", (req, res) => {
-  
 
+// SIGN-UP POST REQUEST
+APP.post("/SignUp", (req, res) => {
+  const {f_name,l_name, email, password} = req.body
+  const newUser = new User({
+    f_name: f_name,
+    l_name: l_name,
+    email: email,
+    password: password,
+  });
+
+  newUser.save(function (err, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(result);
+    }
+  });
   // const postObj = {
   //   email_addr: email,
   //   college_name: college,
@@ -81,8 +91,5 @@ APP.post("/SignUp", (req, res) => {
   // const newUser = new User({
 
   // })
-  
-  console.log(req.body) ;
+  console.log(db.user.find({}))
 });
-
-

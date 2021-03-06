@@ -5,6 +5,11 @@
     width: 100%;
 }
 
+.account-text {
+    color:white;
+    text-align:center;
+}
+
 /* ./components/taskbar-group-icons.jsx */
 /* Individual group icon in taskbar */
 .group-icon {

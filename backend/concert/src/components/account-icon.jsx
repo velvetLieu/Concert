@@ -8,8 +8,9 @@ import Icon from "./../images/profile-user.png";
 function AccountIcon () {
   return (
     <>
-    <Link to="">
+    <Link to="/account" style={{ textDecoration: 'none' }}>
         <Image src={ Icon } className="account-icon" alt=""/>
+        <p className="account-text">Account</p>
     </Link>
     </>
   );

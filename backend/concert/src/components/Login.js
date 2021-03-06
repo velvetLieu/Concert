@@ -34,11 +34,12 @@ const Login = ({ children }) => {
                   className="justify-content-between"
                   aria-label="Toolbar with Button groups"
                 >
+                 <Link className="mr-2" to="/Sign-up">
                   <Button variant="outline-primary btn-signup" type="submit">
-                    <Link className="mr-2" to="/Sign-up">
+                   
                       Sign up
-                    </Link>
                   </Button>
+                  </Link>
                   <Button variant="primary" type="submit">
                     Sign in
                   </Button>

@@ -2,7 +2,7 @@
 /* User account icon in taskbar */
 .account-icon {
     position: relative;
-    left: 0.3em;
+    width: 100%;
 }
 
 /* ./components/taskbar-group-icons.jsx */

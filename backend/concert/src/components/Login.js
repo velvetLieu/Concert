@@ -6,9 +6,9 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import {ReactComponent as Lamp} from "../images/loginLamp.svg";
-import {Link} from "react-router-dom";
 import axios from "axios";
 
+// TODO: Use express sessions to auth a user and save session database
 
 const Login = ({children}) => {
   // Create user object
@@ -18,17 +18,29 @@ const Login = ({children}) => {
   });
 
   // Functions
+  // TODO: move functions to different file to be more modular?
+  // Submission
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(user);
+
+    // Post data to backend
+    axios.post('/', { user })
+      .then(res => {
+        console.log(res.data);
+    });
+
+    // TODO: Reset fields
   };
 
-  const updateField = e => {
+  // Update values with changes to text fields
+  const handleChange = e => {
     setUserState({
       ...user,
       [e.target.name]: e.target.value
     });
   };
+
+// TODO: Add error handling using onBlur?
 
   return (
     <>
@@ -46,7 +58,7 @@ const Login = ({children}) => {
           name="email"
           placeholder="Enter email"
           value={user.email}
-          onChange={updateField}
+          onChange={handleChange}
           />
         <Form.Text className="text-muted">
           We'll never share your email with anyone else.
@@ -60,7 +72,7 @@ const Login = ({children}) => {
           name="password"
           value={user.password}
           placeholder="Password"
-          onChange={updateField}
+          onChange={handleChange}
           />
       </Form.Group>
 

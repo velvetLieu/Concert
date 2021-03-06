@@ -26,7 +26,8 @@ const App = () => {
       <Switch>
         <Route exact path="/">
         <MainPage children={<Login />} />
-        <DeleteGroup /> {/* Reroute this to group-icon.jsx */}
+        {/*// TODO: Reroute this to group-icon.jsx*/}
+        <DeleteGroup />
         </Route>
         <Route exact path="/Forgot">
         <MainPage children={<ForgotPass />} />

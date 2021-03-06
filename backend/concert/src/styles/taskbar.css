@@ -1,3 +1,10 @@
+/* ./components/account-icon.jsx */
+/* User account icon in taskbar */
+.account-icon {
+    position: relative;
+    left: 0.3em;
+}
+
 /* ./components/taskbar-group-icons.jsx */
 /* Individual group icon in taskbar */
 .group-icon {
@@ -6,6 +13,7 @@
     margin: 0.5em;
     border-radius: 50px;
 }
+
 
 /* ./components/taskbar.jsx */
 /* Taskbar to left of page to hold Home, Create Groups, Group Icons*/

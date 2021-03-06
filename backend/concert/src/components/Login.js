@@ -9,6 +9,7 @@ import {ReactComponent as Lamp} from "../images/loginLamp.svg";
 import axios from "axios";
 
 // TODO: Use express sessions to auth a user and save session database
+// TODO: Authenticate user from db
 
 const Login = ({children}) => {
   // Create user object
@@ -29,7 +30,10 @@ const Login = ({children}) => {
         console.log(res.data);
     });
 
-    // TODO: Reset fields
+    // Reset fields
+    setUserState({email: '', password: ''});
+    console.log(user);
+
   };
 
   // Update values with changes to text fields

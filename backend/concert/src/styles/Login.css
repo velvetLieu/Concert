@@ -1,0 +1,10 @@
+.login-svg {
+  height: auto;
+  width: auto;
+}
+.btn-signup a {
+  color: white;
+}
+.btn-signup a:hover {
+  text-decoration: none;
+}

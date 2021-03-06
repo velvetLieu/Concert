@@ -91,5 +91,4 @@ APP.post("/SignUp", (req, res) => {
   // const newUser = new User({
 
   // })
-  console.log(db.user.find({}))
 });

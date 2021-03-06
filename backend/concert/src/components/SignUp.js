@@ -58,17 +58,32 @@ const SignUp = ({ children }) => {
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>First Name</Form.Label>
-                <Form.Control ref={f_name} type="text" placeholder="" />
+                <Form.Control
+                  ref={f_name}
+                  type="text"
+                  placeholder=""
+                  required
+                />
               </Form.Group>
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>Last Name</Form.Label>
-                <Form.Control ref={l_name} type="text" placeholder="" />
+                <Form.Control
+                  ref={l_name}
+                  type="text"
+                  placeholder=""
+                  required
+                />
               </Form.Group>
             </Form.Row>
 
             <Form.Group controlId="formGridAddress1">
               <Form.Label>Email Address</Form.Label>
-              <Form.Control ref={email_addr} type="email" placeholder="" />
+              <Form.Control
+                ref={email_addr}
+                type="email"
+                placeholder=""
+                required
+              />
             </Form.Group>
 
             <Form.Group controlId="formGridAddress2">
@@ -82,6 +97,7 @@ const SignUp = ({ children }) => {
                 ref={password_sign_up}
                 type="password"
                 placeholder=""
+                required
               />
             </Form.Group>
 
@@ -94,6 +110,7 @@ const SignUp = ({ children }) => {
                   id="inlineFormCustomSelect"
                   custom
                   ref={college_select}
+                  required
                 >
                   {collegeNames.map((college, i) => (
                     <option key={i} value={college}>

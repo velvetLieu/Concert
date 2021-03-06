@@ -103,13 +103,6 @@ svg {
 	fill: currentColor;
 }
 
-/* TODO: Move to login.css */
-/* Login Lamp image */
-.login-svg{
-  height: auto;
-  width: auto;
-}
-
 
 /* Change layout for smaller screens */
 @media only screen and (max-width: 700px) {

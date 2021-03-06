@@ -12,7 +12,7 @@ function TaskBar () {
   return (
     <>
     <Container className="taskbar">
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1.5 }}>
           {/*<!-- Active User Account -->*/}
           <AccountIcon />
       </View>

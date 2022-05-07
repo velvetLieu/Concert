@@ -1,5 +1,5 @@
-# **Concert | A Collaborative Learning System for Tutoring and Group Study**
-491 Senior Design Capstone Project
+# **Concert | 491 Senior Design Capstone Project**
+A Collaborative Learning System for Tutoring and Group Study
 
 http://concert491.herokuapp.com/
 

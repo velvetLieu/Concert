@@ -16,6 +16,7 @@ We propose a collaborative learning system, Concert, whose purpose is to organiz
 - Material UI & Bootstrap (for User Interface)
 
 #### Server
+- Node.js
 - Express
 - Mongoose
 - bcryptjs (for data encryption)
@@ -23,6 +24,7 @@ We propose a collaborative learning system, Concert, whose purpose is to organiz
 - Joi (for data validation)
 - socket.io (for establishing real-time communication)
 - Nodemon (for automatic node server restart)
+- Babel (for transcompiling JavaScript)
 
 #### Database
 - MongoDB (MongoDB Atlas)

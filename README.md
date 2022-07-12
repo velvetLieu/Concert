@@ -37,6 +37,8 @@ We propose a collaborative learning system, Concert, whose purpose is to organiz
 ## ⚙️ Testing
 - WAVE (for accessibility testing)
 - loader.io (for stress testing)
+- react-testing-library (for unit testing)
+- jest (for integration testing)
 
 ## 🧭 Roadmap
 - Account Recovery
